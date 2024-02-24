@@ -20,7 +20,137 @@
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
   <!-- Responsive Style -->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-
+  <style>
+    .ag-courses-component .ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+  }
+  
+  .ag-courses-component body {
+    background-color: #000;
+  }
+  
+  .ag-courses-component .ag-courses_box {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 0;
+  }
+  
+  .ag-courses-component .ag-courses_item {
+    flex: 0 0 calc(33.33333% - 30px);
+    margin: 0 15px 30px;
+    overflow: hidden;
+    border-radius: 28px;
+  }
+  
+  .ag-courses-component .ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .ag-courses-component .ag-courses-item_link:hover,
+  .ag-courses-component .ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+  }
+  
+  .ag-courses-component .ag-courses-item_link:hover .ag-courses-item_bg {
+    transform: scale(10);
+  }
+  
+  .ag-courses-component .ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .ag-courses-component .ag-courses-item_date-box {
+    font-size: 18px;
+    color: #FFF;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .ag-courses-component .ag-courses-item_date {
+    font-weight: bold;
+    color: #f9b234;
+    transition: color .5s ease;
+  }
+  
+  .ag-courses-component .ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #f9b234;
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+    border-radius: 50%;
+    transition: all .5s ease;
+  }
+  
+  .ag-courses-component .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #3ecd5e;
+  }
+  
+  .ag-courses-component .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e44002;
+  }
+  
+  .ag-courses-component .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #952aff;
+  }
+  
+  .ag-courses-component .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+    background-color: #cd3e94;
+  }
+  
+  .ag-courses-component .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+    background-color: #4c49ea;
+  }
+  
+  @media only screen and (max-width: 979px) {
+    .ag-courses-component .ag-courses_item {
+      flex: 0 0 calc(50% - 30px);
+    }
+    .ag-courses-component .ag-courses-item_title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-courses-component .ag-format-container {
+      width: 96%;
+    }
+  }
+  
+  @media only screen and (max-width: 639px) {
+    .ag-courses-component .ag-courses_item {
+      flex: 0 0 100%;
+    }
+    .ag-courses-component .ag-courses-item_title {
+      min-height: 72px;
+      line-height: 1;
+      font-size: 24px;
+    }
+    .ag-courses-component .ag-courses-item_link {
+      padding: 22px 40px;
+    }
+    .ag-courses-component .ag-courses-item_date-box {
+      font-size: 16px;
+    }
+  }
+  
+  </style>
   <style>
     .navbar-nav {
       display: flex;
@@ -1829,6 +1959,956 @@
 </section>
 
 <!-- joint orgainisng secretary end -->
+<!-- rest commitee start-->
+<section class="section-padding text-center" style="margin-top: -100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">INTERNATIONAL ADVISORY COMMITTEE</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="ag-courses-component">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. K N Gunalan 
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Ex-President, American Society of Civil Engineers (ASCE)
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Sudhir Kumar Barai
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Director, BITS Pilani
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Mani Golparvar-Fard
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Associate Professor, University of Illinois, USA
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. T.I. Eldho
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Professor, IIT Bombay
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Katie King
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Member of the UK Government, APPG Task Force, London, UK
+                <!-- <span class="ag-courses-item_date">
+                  30.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr K.V.L.Subramanian
+              </div>
+              <div class="ag-courses-item_date-box">
+                Professor, IIT Hyderabad
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. Kam Cheng
+              </div>
+              <div class="ag-courses-item_date-box">
+                Quantity Surveying & Constr. Manager, Ara Institute of Canterbury, New Zealand.
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Philip P. Ermita
+              </div>
+              <div class="ag-courses-item_date-box">
+                Dean, College of Engineering, Laguna, Philippines
+              </div>
+            </a>
+          </div>
+
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Indubhushan Patnaikuni
+              </div>
+              <div class="ag-courses-item_date-box">
+                RMIT, Melbourne, Australia
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Mahdi O. Karkush
+              </div>
+              <div class="ag-courses-item_date-box">
+                CoE, University of Baghdad, Al- Jadiriah, Baghdad- Iraq
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. Lim Kie Yong
+              </div>
+              <div class="ag-courses-item_date-box">
+                Director, MATCOR Technical Services, Singapore
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Ronald L. Orale
+              </div>
+              <div class="ag-courses-item_date-box">
+                Professor, Samar State University, Philippines
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                 Dr. Miftahul Iman
+              </div>
+              <div class="ag-courses-item_date-box">
+              Janabadra University, Indonesia
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Brijesh Kumar
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Bule Hora University, Ethiopia
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Sudarshan Kurwadkar
+              </div>
+              <div class="ag-courses-item_date-box">
+                Professor, University of California
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section-padding text-center" style="margin-top: -100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">NATIONAL ADVISORY COMMITTEE</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="ag-courses-component">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. R.K. Ingle
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Professor, VNIT, Nagpur 
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. H.O.Thakre
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Ex President, IEI(I)
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. P.S.Patankar
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 VP(W), ICI, Structural Consultant
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. N.P.Rajamane
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Ex. Head, SRMU, Chennai
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. Vivek Naik
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Past President, ICI
+                <!-- <span class="ag-courses-item_date">
+                  30.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. M. Kumthekar
+              </div>
+              <div class="ag-courses-item_date-box">
+                Ex. Principal Govt. CoE, Nagpur
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Rajiv Gupta
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Sr. Professor, BITS Pilani
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Bishwajit Bhattacharjee
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Professor, IIT, Delhi
+              </div>
+            </a>
+          </div>
+
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Umesh Sharma
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Professor, IIT, Roorkee, India
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. O.R Jaiswal
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Director, NIT Goa
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. S.A. Dhale
+              </div>
+              <div class="ag-courses-item_date-box">
+                Principal, PCE, Nagpur
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.M. Shende
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Principal, PJLCoE, Nagpur
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. Shantilal Jain
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Stuctural Consultant, Mumbai
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Rahul Ralegaongar
+              </div>
+              <div class="ag-courses-item_date-box">
+                 Professor VNIT
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.D. Pofale
+              </div>
+              <div class="ag-courses-item_date-box">
+                Ex. Emeritus Professor, VNIT, Nagpur
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. V.M. Mhaisalkar
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Emeritus Professor, VNIT, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.D. Ghare
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Professor, Deptt of Civil Engg, VNIT, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. S.G. Makarande
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Principal, BDCoE, Wardha
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Arvind Mahajan
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Zonal Technical Head, Ultratech Cement
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. P.P. Deshpande
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 ICI Chairman, Elect., Nagpur Centre
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. D.K. Parbat
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                HOD, Civil, G.P., Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Manmohan Goel
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 VNIT Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Mangesh Madurwar
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 VNIT, Nagpur 
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. G.M. Deshmukh
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Dean LITU Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. S.B. Thakre
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Principal, AISSM's APCoE, Pune
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. H.V. Hajare
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Principal, GNCoE, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Mona N. Shah
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Ex. Dean, NICMAR & RICS of School of Built Environment, Amity University
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Girish H. Pophali
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Senior Principal Scientist, CSIR-NEERI, Nagpur,
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. K.C. Tayde
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 AGM, Quality Control, NMRCL
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Mrs. S. Valsson
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Ex Principal, SDMCoA, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. U.P.Waghe
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Principal, YCCE, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. M.A.Kawalkar
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Governing Council Member, ICI
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. Sunil Voditel
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Structural Consultant, Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Sandeep Shirkhedkar
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                Director, imaGIS Engg. Solutions (P) Ltd., Nagpur
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section-padding text-center" style="margin-top: -100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">ORGANISING COMMITTEE</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="ag-courses-component">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr S.P. Khandait
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                HoD I.T., KDKCE
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. D.B. Awachat
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Asstt. Prof. CED, KDKCE
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. A.R. Nikhade
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Asstt. Prof. CED, KDKCE
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Er. D.S. Padole
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 Asstt. Prof. CED, KDKCE
+                <!-- <span class="ag-courses-item_date">
+                  04.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.D. Bhange
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 HoD, MCA, KDKCE
+                <!-- <span class="ag-courses-item_date">
+                  30.11.2022
+                </span> -->
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. Rutuja Budhe
+              </div>
+              <div class="ag-courses-item_date-box">
+                HoD MBA, KDKCE
+              </div>
+            </a>
+          </div>
+      
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. S.M. Malode
+              </div>
+              <div class="ag-courses-item_date-box">
+                HoD AI&DS, KDKCE
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr G.H. Agrawal
+              </div>
+              <div class="ag-courses-item_date-box">
+                HoD Basic Sci. & Hum., KDKCE
+              </div>
+            </a>
+          </div>
+
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.A. Jaiswal
+              </div>
+              <div class="ag-courses-item_date-box">
+                 HoD CSE, KDKCE
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. P.D. Khandait
+              </div>
+              <div class="ag-courses-item_date-box">
+                 HoD E&TC, KDKCE
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. A.C. Waghmare
+              </div>
+              <div class="ag-courses-item_date-box">
+                 HoD Mechanical, KDKCE
+              </div>
+            </a>
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                Dr. S.S. Ambekar
+              </div>
+              <div class="ag-courses-item_date-box">
+                 HoD Elecrtical, KDKCE
+              </div>
+            </a>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- rest commitee end -->
+
 <!-- commitee section ends -->
   <!-- Gallary Section Start -->
   <!-- <section id="gallery" class="section-padding">
@@ -2200,37 +3280,7 @@
   </section>
   <!-- Map Section End -->
 
-  <!-- Contact text Start -->
-  <!-- <section id="contact-text">
-    <div class="container">
-      <div class="row contact-wrapper">
-        <div class="col-lg-4 col-md-5 col-xs-12">
-          <ul>
-            <li>
-              <i class="lni-home"></i>
-            </li>
-            <li><span>K.D.K College of Engineering</li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-3 col-xs-12">
-          <ul>
-            <li>
-              <i class="lni-phone"></i>
-            </li>
-            <li><span>+91 9823423666</span></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-3 col-xs-12">
-          <ul>
-            <li>
-              <i class="lni-envelope"></i>
-            </li>
-            <li><span>ic-cisd2024@kdkce.edu.in</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section> -->
+  
   <section id="contact-text">
     <div class="container">
       <div class="row contact-wrapper">
@@ -2242,22 +3292,38 @@
             <li><span>K.D.K College of Engineering</span></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12">
           <ul>
-            <!-- style="display: flex; flex-direction: column;" -->
             <li style="display: flex;left: 0px;">
               <i class="lni-phone"></i>
             </li>
-            <!-- <div style="display: flex; flex-direction: column;"> -->
           <div style="display: flex;flex-direction: column; margin-top: -30px;">
             <li><span>+91 9823423666</span></li>
             <li><span>+91 9850346295</span></li>
             <li><span>+91 9823719908</span></li>
             <li><span>+91 7122711400</span></li>
           </div> 
-          <!-- </div> -->
+          
           </ul>
-        </div>
+        </div> -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <ul>
+              <!-- style="display: flex; flex-direction: column;" -->
+              <li style="display: flex;left: 0px;">
+                  <i class="lni-phone"></i>
+              </li>
+              <div style="display: flex; justify-content: center; align-items: center;">
+              <div style="display: flex;flex-direction: column; margin-top: -30px; margin-left: 20px;">
+                  <li><span>PROF. MAHENDRA UMARE: +91 9823423666</span></li>
+                  <li><span>DR. VALSSON VARGHESE: +91 9850346295</span></li>
+                  <li><span>DR. SWAPNEEL R. SATONE: +91 9823719908</span></li>
+                  <li><span>K.D.K College of Engineering: +91 7122711400</span></li>
+              </div> 
+              </div>
+          </ul>
+      </div>
+      
+      
         <div class="col-lg-4 col-md-4 col-sm-12">
           <ul>
             <li>
