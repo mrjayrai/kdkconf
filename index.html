@@ -275,7 +275,66 @@
         });
       });
     </script> -->
-    
+    <script>
+      // JavaScript to toggle visibility of sections and their nested sections
+      document.addEventListener("DOMContentLoaded", function() {
+          // Get all navbar links
+          const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  
+          // Get all sections
+          const sections = document.querySelectorAll("section");
+  
+          // Function to recursively show sections and their nested sections
+          function showSection(section) {
+              section.style.display = "block";
+              const nestedSections = section.querySelectorAll("section");
+              nestedSections.forEach(function(nestedSection) {
+                  showSection(nestedSection);
+              });
+          }
+  
+          // Function to recursively hide sections and their nested sections
+          function hideSection(section) {
+              section.style.display = "none";
+              const nestedSections = section.querySelectorAll("section");
+              nestedSections.forEach(function(nestedSection) {
+                  hideSection(nestedSection);
+              });
+          }
+  
+          // Hide all sections except the first one initially
+          sections.forEach(function(section, index) {
+              if (index !== 0) {
+                  hideSection(section);
+              }
+          });
+  
+          // Add click event listener to each navbar link
+          navbarLinks.forEach(function(link) {
+              link.addEventListener("click", function(event) {
+                  // Prevent default link behavior
+                  event.preventDefault();
+  
+                  // Hide all sections
+                  sections.forEach(function(section) {
+                      hideSection(section);
+                  });
+  
+                  // Get the target section ID from the href attribute of the clicked link
+                  const targetId = link.getAttribute("href").slice(1);
+  
+                  // Show the target section and its nested sections
+                  const targetSection = document.getElementById(targetId);
+                  if (targetSection) {
+                      showSection(targetSection);
+                  }
+                  
+              });
+          });
+      });
+  </script>
+  
+  
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
@@ -317,7 +376,7 @@
               <a class="nav-link" href="#schedules">Important Dates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#collconf">Committees</a>
+              <a class="nav-link" href="#team">Committees</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#google-map-area">Contact</a>
@@ -349,7 +408,7 @@
               </p>
               <p class="banner-desc" style="font-size: 19px; margin-top: -18px;"> (Hybrid Mode)</p>
               <div class="banner-btn">
-                <a href="#registration" class=" btn btn-common">Register Now</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxGzHSesMXkP6CKTe9zPDQMDMokKesQEInJBFAwrTPHX0WOA/viewform" target="_blank" class=" btn btn-common">Register Now</a>
               </div>
             </div>
           </div>
@@ -474,6 +533,242 @@
       </div>
     </div>
 
+    <!-- <section id="intro" class="intro section-padding"> -->
+      <div class="container" style="margin-top: 30px;">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Themes</h2>
+              <p class="wow fadeInDown" data-wow-delay="0.2s">Conference Themes</p>
+            </div>
+          </div>
+        </div>
+        <div class="row intro-wrapper">
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70">
+              <i class="lni-microphone"></i>
+              <!-- <h3>Infrastructure Resilience</h3>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
+                 </p> -->
+              <h3 style="font-size: 20px;">Sustainable Construction and Materials</h3>
+              <ol style="margin-left: 30px; white-space: nowrap;">
+                <li style="list-style: circle;">Concrete Technology</li>
+                <li style="list-style: circle;">Steel and Composite Structure</li>
+                <li style="list-style: circle;">Construction Management</li>
+                <li style="list-style: circle;">Advanced Materials</li>
+              </ol>
+              <span class="count-number">01</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="single-intro-text" style="height: 254px;">
+              <i class="lni-users"></i>
+              <!-- <h3 class="ts-title">New People</h3>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
+                 </p> -->
+              <h3 style="font-size: 20px;">Infrastructure Resilience</h3>
+              <ol style="margin-left: 30px; white-space: nowrap;">
+                <li style="list-style: circle;">Geotechnical Engineering</li>
+                <li style="list-style: circle;">Structural Engineering</li>
+                <li style="list-style: circle;">Water Resource Engineering</li>
+                <li style="list-style: circle;">Transportation Engineering</li>
+              </ol>
+              <span class="count-number">02</span>
+            </div>
+            <div class="border-shap left"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70" style="height: 254px;">
+              <i class="lni-bullhorn"></i>
+              <h3 style="font-size: 20px;">Smart and Data-Driven Infrastructure</h3>
+              <ol style="margin-left: 10px;">
+                <li style="list-style: circle;">Sensoring and Monitoring Systems</li>
+                <li style="list-style: circle;">IoT and Big Data Analytics</li>
+                <li style="list-style: circle;">Digital Twins and Simulations</li>
+                <li style="list-style: circle;">Cybersecurity and Resilience</li>
+              </ol>
+              <span class="count-number">03</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70" style="height: 354px;">
+              <i class="lni-heart"></i>
+              <h3 style="font-size: 20px;">Infrastructure for Equity and Ouality of Life</h3>
+              <ol style="margin-left: -25px; white-space: nowrap;">
+                <li style="list-style: circle;">Accessibility and Inclusivity</li>
+                <li style="list-style: circle;">Urban Infrastructure and Development</li>
+                <li style="list-style: circle;">Rural Infrastructure Developemnt</li>
+                <li style="list-style: circle;">Infrastructure Finance and Investment</li>
+              </ol>
+              <span class="count-number">04</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="single-intro-text mb-70" style="height: 354px;">
+              <i class="lni-cup"></i>
+              <h3 style="font-size: 20px; margin-top: 20px; ">Interdisciplinary Collaboration
+                and Knowledge Sharing:</h3>
+              <ol style="margin-left: -25px;">
+                <li style="list-style: circle; ">Engineering with other disciplines</li>
+                <li style="list-style: circle; ">Community engagement and participation</li>
+                <li style="list-style: circle; ">Global knowledge exchange and technology transfer</li>
+                <li style="list-style: circle; ">Education and capacity building</li>
+              </ol>
+              <span class="count-number">05</span>
+            </div>
+          </div>
+          <!-- <div class="col-lg-4 col-md-6 col-xs-12">
+              <div class="single-intro-text mb-70">
+                 <i class="lni-gallery"></i>
+                 <h3>Meet New Faces</h3>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
+                 </p>
+                 <span class="count-number">06</span>
+              </div>
+            </div> -->
+        </div>
+      </div>
+    <!-- </section> -->
+    <section id="team1" class="section-padding text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Keynote Speakers</h2>
+              <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+                illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-bt">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/ronaldorale.png" style="height: 200px;" alt="">
+                <!-- <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Dr. Ronald L. Orale</a></h3>
+                <p>Prof. Samar State University , Philippines</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/rajnith1.png" style="height: 200px;" alt="">
+                <!-- <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Dr. Ranjith Dissanayake</a></h3>
+                <p>Sr. Prof,
+                  University of Peradenia
+                  <br> Sri Lanka
+                </p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+  
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/eldoti.png" alt="" style="height: 200px;">
+                <!-- <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Dr. Eldho T.I.</a></h3>
+                <p>Prof. Dept of Civil Engineering <br> I.I.T., Bombay</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+  
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/kvl.png" alt="" style="height: 200px;">
+                <!-- <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Dr. KVL Subramanian</a></h3>
+                <p>Prof, Dept of Civil Engineering <br>I.I.T., Hyderabad</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+  
+         
+  
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <!-- <div class="team-item wow fadeInUp" data-wow-delay="1.6s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/team/team-08.jpg" alt="">
+                <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Jhon Doe</a></h3>
+                <p>Back-end Developer, ASUS</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- <a href="#" class="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s">Meet all speakers</a> -->
+      </div>
+    </section>
   </section>
   <!-- <div style="background-color: white; margin-left: 34px; margin-top: 20px; height: 100%;">
       <div style="max-width: 1000px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -561,105 +856,7 @@
   <!-- Information Bar End -->
 
   <!-- intro Section Start -->
-  <section id="intro" class="intro section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title-header text-center">
-            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Themes</h2>
-            <p class="wow fadeInDown" data-wow-delay="0.2s">Conference Themes</p>
-          </div>
-        </div>
-      </div>
-      <div class="row intro-wrapper">
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="single-intro-text mb-70">
-            <i class="lni-microphone"></i>
-            <!-- <h3>Infrastructure Resilience</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p> -->
-            <h3 style="font-size: 20px;">Sustainable Construction and Materials</h3>
-            <ol style="margin-left: 30px; white-space: nowrap;">
-              <li style="list-style: circle;">Concrete Technology</li>
-              <li style="list-style: circle;">Steel and Composite Structure</li>
-              <li style="list-style: circle;">Construction Management</li>
-              <li style="list-style: circle;">Advanced Materials</li>
-            </ol>
-            <span class="count-number">01</span>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="single-intro-text" style="height: 254px;">
-            <i class="lni-users"></i>
-            <!-- <h3 class="ts-title">New People</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p> -->
-            <h3 style="font-size: 20px;">Infrastructure Resilience</h3>
-            <ol style="margin-left: 30px; white-space: nowrap;">
-              <li style="list-style: circle;">Geotechnical Engineering</li>
-              <li style="list-style: circle;">Structural Engineering</li>
-              <li style="list-style: circle;">Water Resource Engineering</li>
-              <li style="list-style: circle;">Transportation Engineering</li>
-            </ol>
-            <span class="count-number">02</span>
-          </div>
-          <div class="border-shap left"></div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="single-intro-text mb-70" style="height: 254px;">
-            <i class="lni-bullhorn"></i>
-            <h3 style="font-size: 20px;">Smart and Data-Driven Infrastructure</h3>
-            <ol style="margin-left: 10px;">
-              <li style="list-style: circle;">Sensoring and Monitoring Systems</li>
-              <li style="list-style: circle;">IoT and Big Data Analytics</li>
-              <li style="list-style: circle;">Digital Twins and Simulations</li>
-              <li style="list-style: circle;">Cybersecurity and Resilience</li>
-            </ol>
-            <span class="count-number">03</span>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="single-intro-text mb-70" style="height: 354px;">
-            <i class="lni-heart"></i>
-            <h3 style="font-size: 20px;">Infrastructure for Equity and Ouality of Life</h3>
-            <ol style="margin-left: -25px; white-space: nowrap;">
-              <li style="list-style: circle;">Accessibility and Inclusivity</li>
-              <li style="list-style: circle;">Urban Infrastructure and Development</li>
-              <li style="list-style: circle;">Rural Infrastructure Developemnt</li>
-              <li style="list-style: circle;">Infrastructure Finance and Investment</li>
-            </ol>
-            <span class="count-number">04</span>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="single-intro-text mb-70" style="height: 354px;">
-            <i class="lni-cup"></i>
-            <h3 style="font-size: 20px; margin-top: 20px; ">Interdisciplinary Collaboration
-              and Knowledge Sharing:</h3>
-            <ol style="margin-left: -25px;">
-              <li style="list-style: circle; ">Engineering with other disciplines</li>
-              <li style="list-style: circle; ">Community engagement and participation</li>
-              <li style="list-style: circle; ">Global knowledge exchange and technology transfer</li>
-              <li style="list-style: circle; ">Education and capacity building</li>
-            </ol>
-            <span class="count-number">05</span>
-          </div>
-        </div>
-        <!-- <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-gallery"></i>
-               <h3>Meet New Faces</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">06</span>
-            </div>
-          </div> -->
-      </div>
-    </div>
-  </section>
+  
   <!-- intro Section End -->
 
   <!-- Counter Area Start-->
@@ -807,6 +1004,40 @@
       </div>
     </div>
   </div>
+  <div class="table-container">
+    <table>
+      <tr style="color: white;">
+        <th rowspan="2">Degree</th>
+        <th colspan="2">Indian</th>
+        <th colspan="2">International</th>
+      </tr>
+      <tr style="color: white;">
+        <th>Online Participation</th>
+        <th>For Author</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>UG/PG Students</td>
+        <td>500 ₹</td>
+        <td>1000 ₹</td>
+        <td>50 $</td>
+      </tr>
+      <tr>
+        <td>Research Scholar</td>
+        <td>750 ₹</td>
+        <td>1500 ₹</td>
+        <td>100 $</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div class="additional-content"  style="display: flex; justify-content: center; ">
+    <img src="assets/img/qr.jpeg" alt="Image Description" style="height: 100px; float: left;">
+    <div style="float: right;">
+      <p style="font-size: 25px; margin-top: 15px; margin-left: 15px;">Scan Qr for Registration</p>
+      <p style="font-size: 15px; margin-top: 15px; margin-left: 15px;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfxGzHSesMXkP6CKTe9zPDQMDMokKesQEInJBFAwrTPHX0WOA/viewform" target="_blank" style="color: #FF4D79;">Click here if Qr not working</a></p>
+    </div>
+  </div>
 </section>
 <!-- <div class="table-container">
   <table>
@@ -830,40 +1061,7 @@
   </table>
 </div> -->
 
-<div class="table-container">
-  <table>
-    <tr style="color: white;">
-      <th rowspan="2">Degree</th>
-      <th colspan="2">Indian</th>
-      <th colspan="2">International</th>
-    </tr>
-    <tr style="color: white;">
-      <th>Online Participation</th>
-      <th>For Author</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>UG/PG Students</td>
-      <td>500 ₹</td>
-      <td>1000 ₹</td>
-      <td>50 $</td>
-    </tr>
-    <tr>
-      <td>Research Scholar</td>
-      <td>750 ₹</td>
-      <td>1500 ₹</td>
-      <td>100 $</td>
-    </tr>
-  </table>
-</div>
 
-<div class="additional-content"  style="display: flex; justify-content: center; ">
-  <img src="assets/img/qr.jpeg" alt="Image Description" style="height: 100px; float: left;">
-  <div style="float: right;">
-    <p style="font-size: 25px; margin-top: 15px; margin-left: 15px;">Scan Qr for Registration</p>
-    <p style="font-size: 15px; margin-top: 15px; margin-left: 15px;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfxGzHSesMXkP6CKTe9zPDQMDMokKesQEInJBFAwrTPHX0WOA/viewform" target="_blank" style="color: #FF4D79;">Click here if Qr not working</a></p>
-  </div>
-</div>
 
 
 <!-- registration part ends -->
@@ -1166,167 +1364,12 @@
                           <h5 class="name">22-23 March, 2024</h5>
                         </div>
                       </div>
-                      <!-- <div id="collapseOne4" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordion4">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div> -->
+                      
                     </div>
-                    <!-- <div class="card">
-                      <div id="headingTwo">
-                        <div class="schedule-slot-time">
-                          <span> 10.30 - 11.30 AM</span>
-                          Workshop
-                        </div>
-                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo4"
-                          aria-expanded="false" aria-controls="collapseTwo4">
-                          <div class="images-box">
-                            <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
-                          </div>
-                          <h4>Web Design Principles and Best Practices</h4>
-                          <h5 class="name">David Warner</h5>
-                        </div>
-                      </div>
-                      <div id="collapseTwo4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion4">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                    <!-- <div class="card">
-                      <div id="headingThree4">
-                        <div class="schedule-slot-time">
-                          <span> 11.30 - 12.30 AM</span>
-                          Workshop
-                        </div>
-                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree4"
-                          aria-expanded="false" aria-controls="collapseThree4">
-                          <div class="images-box">
-                            <img class="img-fluid" src="assets/img/speaker/speakers-3.jpg" alt="">
-                          </div>
-                          <h4>Web Design Principles and Best Practices</h4>
-                          <h5 class="name">David Warner</h5>
-                        </div>
-                      </div>
-                      <div id="collapseThree4" class="collapse" aria-labelledby="headingThree"
-                        data-parent="#accordion4">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+                    
                   </div>
                 </div>
-                <!-- <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="friday-tab">
-                  <div id="accordion">
-                    <div class="card">
-                      <div id="headingOne">
-                        <div class="schedule-slot-time">
-                          <span> 9.30 - 10.30 AM</span>
-                          Workshop
-                        </div>
-                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo"
-                          aria-expanded="false" aria-controls="collapseTwo">
-                          <div class="images-box">
-                            <img class="img-fluid" src="assets/img/speaker/speakers-2.jpg" alt="">
-                          </div>
-                          <h4>Web Design Principles and Best Practices</h4>
-                          <h5 class="name">David Warner</h5>
-                        </div>
-                      </div>
-                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div id="headingTwo">
-                        <div class="schedule-slot-time">
-                          <span> 10.30 - 11.30 AM</span>
-                          Workshop
-                        </div>
-                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne"
-                          aria-expanded="false" aria-controls="collapseOne">
-                          <div class="images-box">
-                            <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
-                          </div>
-                          <h4>Web Design Principles and Best Practices</h4>
-                          <h5 class="name">David Warner</h5>
-                        </div>
-                      </div>
-                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div id="headingThree">
-                        <div class="schedule-slot-time">
-                          <span> 11.30 - 12.30 AM</span>
-                          Workshop
-                        </div>
-                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree"
-                          aria-expanded="false" aria-controls="collapseThree">
-                          <div class="images-box">
-                            <img class="img-fluid" src="assets/img/speaker/speakers-3.jpg" alt="">
-                          </div>
-                          <h4>Web Design Principles and Best Practices</h4>
-                          <h5 class="name">David Warner</h5>
-                        </div>
-                      </div>
-                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet minima dolores rerum maiores
-                            qui at commodi quas, reprehenderit eius consectetur quae magni molestias veniam, provident
-                            illum facere iure libero asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Veniam earum nihil ex ipsa magni eligendi fugiat assumenda suscipit, accusantium,
-                            necessitatibus reiciendis odit sed, vero amet blanditiis?</p>
-                          <div class="location">
-                            <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
+                
               </div>
             </div>
           </div>
@@ -1337,207 +1380,7 @@
   <!-- Schedule Section End -->
 
   <!-- Team Section Start -->
-  <section id="team" class="section-padding text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title-header text-center">
-            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Keynote Speakers</h2>
-            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-bt">
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <!-- Team Item Starts -->
-          <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/ronaldorale.png" style="height: 200px;" alt="">
-              <!-- <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div> -->
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Dr. Ronald L. Orale</a></h3>
-              <p>Prof. Samar State University , Philippines</p>
-            </div>
-          </div>
-          <!-- Team Item Ends -->
-        </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <!-- Team Item Starts -->
-          <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/rajnith1.png" style="height: 200px;" alt="">
-              <!-- <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div> -->
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Dr. Ranjith Dissanayake</a></h3>
-              <p>Sr. Prof,
-                University of Peradenia
-                <br> Sri Lanka
-              </p>
-            </div>
-          </div>
-          <!-- Team Item Ends -->
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <!-- Team Item Starts -->
-          <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/eldoti.png" alt="" style="height: 200px;">
-              <!-- <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div> -->
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Dr. Eldho T.I.</a></h3>
-              <p>Prof. Dept of Civil Engineering <br> I.I.T., Bombay</p>
-            </div>
-          </div>
-          <!-- Team Item Ends -->
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <!-- Team Item Starts -->
-          <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/kvl.png" alt="" style="height: 200px;">
-              <!-- <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div> -->
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Dr. KVL Subramanian</a></h3>
-              <p>Prof, Dept of Civil Engineering <br>I.I.T., Hyderabad</p>
-            </div>
-          </div>
-          <!-- Team Item Ends -->
-        </div>
-
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp" data-wow-delay="1s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/team/team-05.jpg" alt="">
-              <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Daryl Dixon</a></h3>
-              <p>Full-stack Developer, Google</p>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp" data-wow-delay="1.2s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/team/team-06.jpg" alt="">
-              <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Chris Adams</a></h3>
-              <p>UI Designer, Apple</p>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="col-lg-3 col-md-6 col-xs-12">
-          <div class="team-item wow fadeInUp" data-wow-delay="1.4s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/team/team-07.jpg" alt="">
-              <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Paul Kowalsy</a></h3>
-              <p>Lead Designer, TNW</p>
-            </div>
-          </div>
-        </div> -->
-
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <!-- <div class="team-item wow fadeInUp" data-wow-delay="1.6s">
-            <div class="team-img">
-              <img class="img-fluid" src="assets/img/team/team-08.jpg" alt="">
-              <div class="team-overlay">
-                <div class="overlay-social-icon text-center">
-                  <ul class="social-icons">
-                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="info-text">
-              <h3><a href="#">Jhon Doe</a></h3>
-              <p>Back-end Developer, ASUS</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <a href="#" class="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s">Meet all speakers</a> -->
-    </div>
-  </section>
+  
   <!-- Team Section End -->
 <!-- Committee secion starts -->
 <div id="collconf" style="margin-bottom: 20px;"></div>
@@ -1604,160 +1447,314 @@
      <!-- single photo -->
     </div>
   </div>
-</section>
-
-<!-- conference chair start -->
-<section class="section-padding text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Conference Chair</h2>
-          <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-            illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-        </div>
-      </div>
-      
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/badar.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. A.M. Badar</a></h3>
-            <p>Professor & Vice Principal,KDKCE,Nagpur</p>
+  <section class="section-padding text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Conference Chair</h2>
+            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
           </div>
         </div>
-        <!-- Team Item Ends -->
+        
       </div>
-    </div>
-    
-  </div>
-</section>
-
-<section class="section-padding text-center" style="margin-top: 0px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Conference Co-Chair</h2>
-          <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-            illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-bt">
-      <div class="col-lg-3 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/rsing.jpg" style="height: 200px; object-fit: cover;" alt="">
-            <!-- <div class="team-overlay">
-              <div class="overlay-social-icon text-center">
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div> -->
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Er. Ravindra J. Ringshia</a></h3>
-            <p>President, <br>ASCE-Indian Section</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-      <div class="col-lg-3 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/rajnith1.png" style="height: 200px;" alt="">
-            <!-- <div class="team-overlay">
-              <div class="overlay-social-icon text-center">
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div> -->
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Ranjith Dissanayake</a></h3>
-            <p>Sr. Prof,
-              University of Peradenia
-              <br> Sri Lanka
-            </p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/hdc.jpeg" alt="" style="height: 200px;">
-            <!-- <div class="team-overlay">
-              <div class="overlay-social-icon text-center">
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div> -->
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. H.D.Chandewar</a></h3>
-            <p>Chairman <br> ICI Nagpur Chapter</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/onm.jpeg" alt="" style="height: 200px;">
-            <!-- <div class="team-overlay">
-              <div class="overlay-social-icon text-center">
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div> -->
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr.O.N. Mukharjee</a></h3>
-            <p>Chairman <br>IWWA-Nagpur Center</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-    </div>
       <div class="row justify-content-center">
         <div class="col-lg-4 col-md-6 col-xs-12">
           <!-- Team Item Starts -->
           <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
             <div class="team-img">
-              <img class="img-fluid" src="assets/img/satish.jpeg" style="height: 200px;" alt="">
+              <img class="img-fluid" src="assets/img/badar.png" style="height: 200px;" alt="">
             </div>
             <div class="info-text">
-              <h3><a href="#">Er. Satish Raipure</a></h3>
-              <p>Chairman IEI,<br> Nagpur Local Centre</p>
+              <h3><a href="#">Dr. A.M. Badar</a></h3>
+              <p>Professor & Vice Principal,KDKCE,Nagpur</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <section class="section-padding text-center" style="margin-top: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Conference Co-Chair</h2>
+            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-bt">
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/rsing.jpg" style="height: 200px; object-fit: cover;" alt="">
+              <!-- <div class="team-overlay">
+                <div class="overlay-social-icon text-center">
+                  <ul class="social-icons">
+                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Er. Ravindra J. Ringshia</a></h3>
+              <p>President, <br>ASCE-Indian Section</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/rajnith1.png" style="height: 200px;" alt="">
+              <!-- <div class="team-overlay">
+                <div class="overlay-social-icon text-center">
+                  <ul class="social-icons">
+                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. Ranjith Dissanayake</a></h3>
+              <p>Sr. Prof,
+                University of Peradenia
+                <br> Sri Lanka
+              </p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+  
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/hdc.jpeg" alt="" style="height: 200px;">
+              <!-- <div class="team-overlay">
+                <div class="overlay-social-icon text-center">
+                  <ul class="social-icons">
+                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. H.D.Chandewar</a></h3>
+              <p>Chairman <br> ICI Nagpur Chapter</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+  
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/onm.jpeg" alt="" style="height: 200px;">
+              <!-- <div class="team-overlay">
+                <div class="overlay-social-icon text-center">
+                  <ul class="social-icons">
+                    <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-google" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="lni-pinterest" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr.O.N. Mukharjee</a></h3>
+              <p>Chairman <br>IWWA-Nagpur Center</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+      </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/satish.jpeg" style="height: 200px;" alt="">
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Er. Satish Raipure</a></h3>
+                <p>Chairman IEI,<br> Nagpur Local Centre</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/sarang.jpeg" style="height: 200px;" alt="">
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Dr. Sarang Paranjape</a></h3>
+                <p>Chairman
+                  <br> ACCE-NC
+                </p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
+              <div class="team-img">
+                <img class="img-fluid" src="assets/img/satpathy.jpeg" alt="" style="height: 200px;">
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Er. Rudra B. Satpathy</a></h3>
+                <p>CEO,<br>IFERP,Chennai</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+         <!-- single photo -->
+        </div>
+     
+    
+  </section>
+  
+  
+  
+  
+  <!-- conference chair end -->
+  <!-- convener start -->
+  <section class="section-padding text-center" style="margin-top: -30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Convener</h2>
+            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
+          </div>
+        </div>
+        
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/varge.png" style="height: 200px;" alt="">
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. Valsson Varghese</a></h3>
+              <p>Principal,KDKCE,Nagpur</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- convener end -->
+  
+  
+  <!-- test start -->
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-xs-12">
+      <!-- Co-Convener Section Starts -->
+      <section class="section-padding text-center" style="margin-top: -30px;">
+        <div class="container">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Co-Convener</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <!-- Team Item Starts -->
+              <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+                <div class="team-img">
+                  <img class="img-fluid" src="assets/img/mahendra.png" style="height: 200px;" alt="">
+                </div>
+                <div class="info-text">
+                  <h3><a href="#">Prof. Mahendra Umare</a></h3>
+                  <p>Asstt.Prof.KDKCE,Nagpur</p>
+                </div>
+              </div>
+              <!-- Team Item Ends -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Co-Convener Section Ends -->
+    </div>
+  
+    <div class="col-lg-4 col-md-6 col-xs-12">
+      <!-- Technical Head Section Starts -->
+      <section class="section-padding text-center" style="margin-top: -30px;">
+        <div class="container">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Technical Head</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <!-- Team Item Starts -->
+              <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+                <div class="team-img">
+                  <img class="img-fluid" src="assets/img/nrd.png" style="height: 200px;" alt="">
+                </div>
+                <div class="info-text">
+                  <h3><a href="#">Dr. N.R. Dhamge</a></h3>
+                  <p>Professor & Dean(Acad.),KDKCE,Nagpur</p>
+                </div>
+              </div>
+              <!-- Team Item Ends -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Technical Head Section Ends -->
+    </div>
+  </div>
+  
+  <!-- test end  -->
+  <!-- Organising Secretary start -->
+  <section class="section-padding text-center" style="margin-top: -100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Organising Secretary</h2>
+            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
+          </div>
+        </div>
+        
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/satone.png" style="height: 200px;" alt="">
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. Swapneel R. Satone</a></h3>
+              <p>Asstt.Prof.KDKCE,Nagpur</p>
             </div>
           </div>
           <!-- Team Item Ends -->
@@ -1766,13 +1763,11 @@
           <!-- Team Item Starts -->
           <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
             <div class="team-img">
-              <img class="img-fluid" src="assets/img/sarang.jpeg" style="height: 200px;" alt="">
+              <img class="img-fluid" src="assets/img/bisen.png" style="height: 200px;" alt="">
             </div>
             <div class="info-text">
-              <h3><a href="#">Dr. Sarang Paranjape</a></h3>
-              <p>Chairman
-                <br> ACCE-NC
-              </p>
+              <h3><a href="#">Dr. Pallavi U. Bisen</a></h3>
+              <p>Asstt.Prof.KDKCE,Nagpur</p>
             </div>
           </div>
           <!-- Team Item Ends -->
@@ -1781,1165 +1776,1014 @@
           <!-- Team Item Starts -->
           <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
             <div class="team-img">
-              <img class="img-fluid" src="assets/img/satpathy.jpeg" alt="" style="height: 200px;">
+              <img class="img-fluid" src="assets/img/shende.png" alt="" style="height: 200px;">
             </div>
             <div class="info-text">
-              <h3><a href="#">Er. Rudra B. Satpathy</a></h3>
-              <p>CEO,<br>IFERP,Chennai</p>
+              <h3><a href="#">Prof. Ashay D. Shende</a></h3>
+              <p>Asstt.Prof.KDKCE,Nagpur</p>
             </div>
           </div>
           <!-- Team Item Ends -->
         </div>
        <!-- single photo -->
       </div>
-   
+    </div>
+  </section>
+  <!-- Organising Secretary end -->
+  <!-- joint organising secretary start -->
+  <section class="section-padding text-center" style="margin-top: -100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Joint Organising Secretary</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/ruparai.png" style="height: 200px;" alt="">
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. Balbir Singh Ruparai</a></h3>
+              <p>Asstt.Prof.KDKCE,Nagpur</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/vaidya.png" style="height: 200px;" alt="">
+            </div>
+            <div class="info-text">
+              <h3><a href="#">Dr. Vinayak D. Vaidya</a></h3>
+              <p>Asstt.Prof.KDKCE,Nagpur</p>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+      </div>
+    </div>
+  </section>
   
-</section>
-
-
-
-
-<!-- conference chair end -->
-<!-- convener start -->
-<section class="section-padding text-center" style="margin-top: -30px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Convener</h2>
-          <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-            illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-        </div>
-      </div>
-      
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/varge.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Valsson Varghese</a></h3>
-            <p>Principal,KDKCE,Nagpur</p>
+  <!-- joint orgainisng secretary end -->
+  <!-- rest commitee start-->
+  <section class="section-padding text-center" style="margin-top: -100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">INTERNATIONAL ADVISORY COMMITTEE</h2>
           </div>
         </div>
-        <!-- Team Item Ends -->
       </div>
-    </div>
-    
-  </div>
-</section>
-<!-- convener end -->
-
-
-<!-- test start -->
-<div class="row justify-content-center">
-  <div class="col-lg-4 col-md-6 col-xs-12">
-    <!-- Co-Convener Section Starts -->
-    <section class="section-padding text-center" style="margin-top: -30px;">
-      <div class="container">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Co-Convener</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/mahendra.png" style="height: 200px;" alt="">
-              </div>
-              <div class="info-text">
-                <h3><a href="#">Prof. Mahendra Umare</a></h3>
-                <p>Asstt.Prof.KDKCE,Nagpur</p>
-              </div>
+      <div class="row justify-content-center">
+        <div class="ag-courses-component">
+          <div class="ag-courses_box">
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. K N Gunalan 
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Ex-President, American Society of Civil Engineers (ASCE)
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
             </div>
-            <!-- Team Item Ends -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Co-Convener Section Ends -->
-  </div>
-
-  <div class="col-lg-4 col-md-6 col-xs-12">
-    <!-- Technical Head Section Starts -->
-    <section class="section-padding text-center" style="margin-top: -30px;">
-      <div class="container">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Technical Head</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/nrd.png" style="height: 200px;" alt="">
-              </div>
-              <div class="info-text">
-                <h3><a href="#">Dr. N.R. Dhamge</a></h3>
-                <p>Professor & Dean(Acad.),KDKCE,Nagpur</p>
-              </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Sudhir Kumar Barai
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Director, BITS Pilani
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
             </div>
-            <!-- Team Item Ends -->
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Mani Golparvar-Fard
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Associate Professor, University of Illinois, USA
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. T.I. Eldho
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Professor, IIT Bombay
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Katie King
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Member of the UK Government, APPG Task Force, London, UK
+                  <!-- <span class="ag-courses-item_date">
+                    30.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr K.V.L.Subramanian
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Professor, IIT Hyderabad
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. Kam Cheng
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Quantity Surveying & Constr. Manager, Ara Institute of Canterbury, New Zealand.
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Philip P. Ermita
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Dean, College of Engineering, Laguna, Philippines
+                </div>
+              </a>
+            </div>
+  
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Indubhushan Patnaikuni
+                </div>
+                <div class="ag-courses-item_date-box">
+                  RMIT, Melbourne, Australia
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Mahdi O. Karkush
+                </div>
+                <div class="ag-courses-item_date-box">
+                  CoE, University of Baghdad, Al- Jadiriah, Baghdad- Iraq
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. Lim Kie Yong
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Director, MATCOR Technical Services, Singapore
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Ronald L. Orale
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Professor, Samar State University, Philippines
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                   Dr. Miftahul Iman
+                </div>
+                <div class="ag-courses-item_date-box">
+                Janabadra University, Indonesia
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Brijesh Kumar
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Bule Hora University, Ethiopia
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Sudarshan Kurwadkar
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Professor, University of California
+                </div>
+              </a>
+            </div>
           </div>
         </div>
+        
       </div>
-    </section>
-    <!-- Technical Head Section Ends -->
-  </div>
-</div>
-
-<!-- test end  -->
-<!-- Organising Secretary start -->
-<section class="section-padding text-center" style="margin-top: -100px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Organising Secretary</h2>
-          <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-            illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-        </div>
-      </div>
-      
     </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/satone.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Swapneel R. Satone</a></h3>
-            <p>Asstt.Prof.KDKCE,Nagpur</p>
+  </section>
+  <section class="section-padding text-center" style="margin-top: -100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">NATIONAL ADVISORY COMMITTEE</h2>
           </div>
         </div>
-        <!-- Team Item Ends -->
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/bisen.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Pallavi U. Bisen</a></h3>
-            <p>Asstt.Prof.KDKCE,Nagpur</p>
+      <div class="row justify-content-center">
+        <div class="ag-courses-component">
+          <div class="ag-courses_box">
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. R.K. Ingle
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Professor, VNIT, Nagpur 
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. H.O.Thakre
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Ex President, IEI(I)
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. P.S.Patankar
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   VP(W), ICI, Structural Consultant
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. N.P.Rajamane
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Ex. Head, SRMU, Chennai
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. Vivek Naik
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Past President, ICI
+                  <!-- <span class="ag-courses-item_date">
+                    30.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. M. Kumthekar
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Ex. Principal Govt. CoE, Nagpur
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Rajiv Gupta
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Sr. Professor, BITS Pilani
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Bishwajit Bhattacharjee
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Professor, IIT, Delhi
+                </div>
+              </a>
+            </div>
+  
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Umesh Sharma
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Professor, IIT, Roorkee, India
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. O.R Jaiswal
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Director, NIT Goa
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. S.A. Dhale
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Principal, PCE, Nagpur
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.M. Shende
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Principal, PJLCoE, Nagpur
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. Shantilal Jain
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Stuctural Consultant, Mumbai
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Rahul Ralegaongar
+                </div>
+                <div class="ag-courses-item_date-box">
+                   Professor VNIT
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.D. Pofale
+                </div>
+                <div class="ag-courses-item_date-box">
+                  Ex. Emeritus Professor, VNIT, Nagpur
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. V.M. Mhaisalkar
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Emeritus Professor, VNIT, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.D. Ghare
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Professor, Deptt of Civil Engg, VNIT, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. S.G. Makarande
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Principal, BDCoE, Wardha
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Arvind Mahajan
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Zonal Technical Head, Ultratech Cement
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. P.P. Deshpande
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   ICI Chairman, Elect., Nagpur Centre
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. D.K. Parbat
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  HOD, Civil, G.P., Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Manmohan Goel
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   VNIT Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Mangesh Madurwar
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   VNIT, Nagpur 
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. G.M. Deshmukh
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Dean LITU Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. S.B. Thakre
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Principal, AISSM's APCoE, Pune
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. H.V. Hajare
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Principal, GNCoE, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Mona N. Shah
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Ex. Dean, NICMAR & RICS of School of Built Environment, Amity University
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Girish H. Pophali
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Senior Principal Scientist, CSIR-NEERI, Nagpur,
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. K.C. Tayde
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   AGM, Quality Control, NMRCL
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Mrs. S. Valsson
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Ex Principal, SDMCoA, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. U.P.Waghe
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Principal, YCCE, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. M.A.Kawalkar
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Governing Council Member, ICI
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. Sunil Voditel
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Structural Consultant, Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Sandeep Shirkhedkar
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  Director, imaGIS Engg. Solutions (P) Ltd., Nagpur
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+  
           </div>
         </div>
-        <!-- Team Item Ends -->
+        
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/shende.png" alt="" style="height: 200px;">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Prof. Ashay D. Shende</a></h3>
-            <p>Asstt.Prof.KDKCE,Nagpur</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-     <!-- single photo -->
     </div>
-  </div>
+  </section>
+  <section class="section-padding text-center" style="margin-top: -100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center">
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">ORGANISING COMMITTEE</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="ag-courses-component">
+          <div class="ag-courses_box">
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr S.P. Khandait
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                  HoD I.T., KDKCE
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. D.B. Awachat
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Asstt. Prof. CED, KDKCE
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. A.R. Nikhade
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Asstt. Prof. CED, KDKCE
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Er. D.S. Padole
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   Asstt. Prof. CED, KDKCE
+                  <!-- <span class="ag-courses-item_date">
+                    04.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.D. Bhange
+                </div>
+        
+                <div class="ag-courses-item_date-box">
+                   HoD, MCA, KDKCE
+                  <!-- <span class="ag-courses-item_date">
+                    30.11.2022
+                  </span> -->
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. Rutuja Budhe
+                </div>
+                <div class="ag-courses-item_date-box">
+                  HoD MBA, KDKCE
+                </div>
+              </a>
+            </div>
+        
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. S.M. Malode
+                </div>
+                <div class="ag-courses-item_date-box">
+                  HoD AI&DS, KDKCE
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr G.H. Agrawal
+                </div>
+                <div class="ag-courses-item_date-box">
+                  HoD Basic Sci. & Hum., KDKCE
+                </div>
+              </a>
+            </div>
+  
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.A. Jaiswal
+                </div>
+                <div class="ag-courses-item_date-box">
+                   HoD CSE, KDKCE
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. P.D. Khandait
+                </div>
+                <div class="ag-courses-item_date-box">
+                   HoD E&TC, KDKCE
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. A.C. Waghmare
+                </div>
+                <div class="ag-courses-item_date-box">
+                   HoD Mechanical, KDKCE
+                </div>
+              </a>
+            </div>
+            <div class="ag-courses_item">
+              <a href="#" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+        
+                <div class="ag-courses-item_title">
+                  Dr. S.S. Ambekar
+                </div>
+                <div class="ag-courses-item_date-box">
+                   HoD Elecrtical, KDKCE
+                </div>
+              </a>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 </section>
-<!-- Organising Secretary end -->
-<!-- joint organising secretary start -->
-<section class="section-padding text-center" style="margin-top: -100px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Joint Organising Secretary</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-6 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/ruparai.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Balbir Singh Ruparai</a></h3>
-            <p>Asstt.Prof.KDKCE,Nagpur</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-      <div class="col-lg-6 col-md-6 col-xs-12">
-        <!-- Team Item Starts -->
-        <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-          <div class="team-img">
-            <img class="img-fluid" src="assets/img/vaidya.png" style="height: 200px;" alt="">
-          </div>
-          <div class="info-text">
-            <h3><a href="#">Dr. Vinayak D. Vaidya</a></h3>
-            <p>Asstt.Prof.KDKCE,Nagpur</p>
-          </div>
-        </div>
-        <!-- Team Item Ends -->
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- joint orgainisng secretary end -->
-<!-- rest commitee start-->
-<section class="section-padding text-center" style="margin-top: -100px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">INTERNATIONAL ADVISORY COMMITTEE</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="ag-courses-component">
-        <div class="ag-courses_box">
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. K N Gunalan 
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Ex-President, American Society of Civil Engineers (ASCE)
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Sudhir Kumar Barai
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Director, BITS Pilani
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Mani Golparvar-Fard
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Associate Professor, University of Illinois, USA
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. T.I. Eldho
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Professor, IIT Bombay
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Katie King
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Member of the UK Government, APPG Task Force, London, UK
-                <!-- <span class="ag-courses-item_date">
-                  30.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr K.V.L.Subramanian
-              </div>
-              <div class="ag-courses-item_date-box">
-                Professor, IIT Hyderabad
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. Kam Cheng
-              </div>
-              <div class="ag-courses-item_date-box">
-                Quantity Surveying & Constr. Manager, Ara Institute of Canterbury, New Zealand.
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Philip P. Ermita
-              </div>
-              <div class="ag-courses-item_date-box">
-                Dean, College of Engineering, Laguna, Philippines
-              </div>
-            </a>
-          </div>
+<!-- conference chair start -->
 
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Indubhushan Patnaikuni
-              </div>
-              <div class="ag-courses-item_date-box">
-                RMIT, Melbourne, Australia
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Mahdi O. Karkush
-              </div>
-              <div class="ag-courses-item_date-box">
-                CoE, University of Baghdad, Al- Jadiriah, Baghdad- Iraq
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. Lim Kie Yong
-              </div>
-              <div class="ag-courses-item_date-box">
-                Director, MATCOR Technical Services, Singapore
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Ronald L. Orale
-              </div>
-              <div class="ag-courses-item_date-box">
-                Professor, Samar State University, Philippines
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                 Dr. Miftahul Iman
-              </div>
-              <div class="ag-courses-item_date-box">
-              Janabadra University, Indonesia
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Brijesh Kumar
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Bule Hora University, Ethiopia
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Sudarshan Kurwadkar
-              </div>
-              <div class="ag-courses-item_date-box">
-                Professor, University of California
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-<section class="section-padding text-center" style="margin-top: -100px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">NATIONAL ADVISORY COMMITTEE</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="ag-courses-component">
-        <div class="ag-courses_box">
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. R.K. Ingle
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Professor, VNIT, Nagpur 
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. H.O.Thakre
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Ex President, IEI(I)
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. P.S.Patankar
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 VP(W), ICI, Structural Consultant
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. N.P.Rajamane
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Ex. Head, SRMU, Chennai
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. Vivek Naik
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Past President, ICI
-                <!-- <span class="ag-courses-item_date">
-                  30.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. M. Kumthekar
-              </div>
-              <div class="ag-courses-item_date-box">
-                Ex. Principal Govt. CoE, Nagpur
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Rajiv Gupta
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Sr. Professor, BITS Pilani
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Bishwajit Bhattacharjee
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Professor, IIT, Delhi
-              </div>
-            </a>
-          </div>
-
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Umesh Sharma
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Professor, IIT, Roorkee, India
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. O.R Jaiswal
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Director, NIT Goa
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. S.A. Dhale
-              </div>
-              <div class="ag-courses-item_date-box">
-                Principal, PCE, Nagpur
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.M. Shende
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Principal, PJLCoE, Nagpur
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. Shantilal Jain
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Stuctural Consultant, Mumbai
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Rahul Ralegaongar
-              </div>
-              <div class="ag-courses-item_date-box">
-                 Professor VNIT
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.D. Pofale
-              </div>
-              <div class="ag-courses-item_date-box">
-                Ex. Emeritus Professor, VNIT, Nagpur
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. V.M. Mhaisalkar
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Emeritus Professor, VNIT, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.D. Ghare
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Professor, Deptt of Civil Engg, VNIT, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. S.G. Makarande
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Principal, BDCoE, Wardha
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Arvind Mahajan
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Zonal Technical Head, Ultratech Cement
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. P.P. Deshpande
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 ICI Chairman, Elect., Nagpur Centre
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. D.K. Parbat
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                HOD, Civil, G.P., Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Manmohan Goel
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 VNIT Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Mangesh Madurwar
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 VNIT, Nagpur 
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. G.M. Deshmukh
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Dean LITU Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. S.B. Thakre
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Principal, AISSM's APCoE, Pune
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. H.V. Hajare
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Principal, GNCoE, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Mona N. Shah
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Ex. Dean, NICMAR & RICS of School of Built Environment, Amity University
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Girish H. Pophali
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Senior Principal Scientist, CSIR-NEERI, Nagpur,
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. K.C. Tayde
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 AGM, Quality Control, NMRCL
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Mrs. S. Valsson
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Ex Principal, SDMCoA, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. U.P.Waghe
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Principal, YCCE, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. M.A.Kawalkar
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Governing Council Member, ICI
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. Sunil Voditel
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Structural Consultant, Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Sandeep Shirkhedkar
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Director, imaGIS Engg. Solutions (P) Ltd., Nagpur
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-<section class="section-padding text-center" style="margin-top: -100px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title-header text-center">
-          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">ORGANISING COMMITTEE</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="ag-courses-component">
-        <div class="ag-courses_box">
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr S.P. Khandait
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                HoD I.T., KDKCE
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. D.B. Awachat
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Asstt. Prof. CED, KDKCE
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. A.R. Nikhade
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Asstt. Prof. CED, KDKCE
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Er. D.S. Padole
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 Asstt. Prof. CED, KDKCE
-                <!-- <span class="ag-courses-item_date">
-                  04.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.D. Bhange
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                 HoD, MCA, KDKCE
-                <!-- <span class="ag-courses-item_date">
-                  30.11.2022
-                </span> -->
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. Rutuja Budhe
-              </div>
-              <div class="ag-courses-item_date-box">
-                HoD MBA, KDKCE
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. S.M. Malode
-              </div>
-              <div class="ag-courses-item_date-box">
-                HoD AI&DS, KDKCE
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr G.H. Agrawal
-              </div>
-              <div class="ag-courses-item_date-box">
-                HoD Basic Sci. & Hum., KDKCE
-              </div>
-            </a>
-          </div>
-
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.A. Jaiswal
-              </div>
-              <div class="ag-courses-item_date-box">
-                 HoD CSE, KDKCE
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. P.D. Khandait
-              </div>
-              <div class="ag-courses-item_date-box">
-                 HoD E&TC, KDKCE
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. A.C. Waghmare
-              </div>
-              <div class="ag-courses-item_date-box">
-                 HoD Mechanical, KDKCE
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Dr. S.S. Ambekar
-              </div>
-              <div class="ag-courses-item_date-box">
-                 HoD Elecrtical, KDKCE
-              </div>
-            </a>
-          </div>
-          
-          
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
 <!-- rest commitee end -->
 
 <!-- commitee section ends -->
@@ -3209,35 +3053,7 @@
   <!-- Blog Section End -->
 
   <!-- Sponsors Section Start -->
-  <section id="sponsors" class="section-padding">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title-header text-center">
-            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Sponsors</h2>
-            <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
-              illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
-          </div>
-        </div>
-      </div>
-      <div class="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
-        <div class="col-lg-12">
-          <div class="sponsors-logo text-center">
-            <a href=""><img src="assets/img/sponsors/sponlogo.jpg" alt="" style=" height: 200px;"></a>
-            <!-- <a href=""><img src="assets/img/sponsors/logo-2.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-3.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-4.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-5.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-6.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-7.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-8.png" alt=""></a>
-            <a href=""><img src="assets/img/sponsors/logo-9.png" alt=""></a> -->
-          </div><!-- sponsors logo end-->
-        </div>
-      </div>
-    </div>
-  </section>
+  
   <!-- Sponsors Section End -->
 
   <!-- Contact Us Section -->
@@ -3302,6 +3118,27 @@
 
   <!-- Map Section Start -->
   <section id="google-map-area">
+    <section id="sponsors" class="section-padding">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Sponsors</h2>
+              <!-- <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius
+                illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
+          <div class="col-lg-12">
+            <div class="sponsors-logo text-center">
+              <a href=""><img src="assets/img/sponsors/sponlogo.jpg" alt="" style=" height: 200px;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -3310,64 +3147,52 @@
         </div>
       </div>
     </div>
+    <section id="contact-text">
+      <div class="container">
+        <div class="row contact-wrapper">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <ul>
+              <li>
+                <i class="lni-home"></i>
+              </li>
+              <li><span>K.D.K College of Engineering</span></li>
+            </ul>
+          </div>
+         
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <ul>
+                <!-- style="display: flex; flex-direction: column;" -->
+                <li style="display: flex;left: 0px;">
+                    <i class="lni-phone"></i>
+                </li>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                <div style="display: flex;flex-direction: column; margin-top: -30px; margin-left: 20px;">
+                    <li><span>PROF. MAHENDRA UMARE: +91 9823423666</span></li>
+                    <li><span>DR. VALSSON VARGHESE: +91 9850346295</span></li>
+                    <li><span>DR. SWAPNEEL R. SATONE: +91 9823719908</span></li>
+                    <li><span>K.D.K College of Engineering: +91 7122711400</span></li>
+                </div> 
+                </div>
+            </ul>
+        </div>
+        
+        
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <ul>
+              <li>
+                <i class="lni-envelope"></i>
+              </li>
+              <li><span>ic-cisd2024@kdkce.edu.in</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
   <!-- Map Section End -->
 
   
-  <section id="contact-text">
-    <div class="container">
-      <div class="row contact-wrapper">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <ul>
-            <li>
-              <i class="lni-home"></i>
-            </li>
-            <li><span>K.D.K College of Engineering</span></li>
-          </ul>
-        </div>
-        <!-- <div class="col-lg-4 col-md-4 col-sm-12">
-          <ul>
-            <li style="display: flex;left: 0px;">
-              <i class="lni-phone"></i>
-            </li>
-          <div style="display: flex;flex-direction: column; margin-top: -30px;">
-            <li><span>+91 9823423666</span></li>
-            <li><span>+91 9850346295</span></li>
-            <li><span>+91 9823719908</span></li>
-            <li><span>+91 7122711400</span></li>
-          </div> 
-          
-          </ul>
-        </div> -->
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <ul>
-              <!-- style="display: flex; flex-direction: column;" -->
-              <li style="display: flex;left: 0px;">
-                  <i class="lni-phone"></i>
-              </li>
-              <div style="display: flex; justify-content: center; align-items: center;">
-              <div style="display: flex;flex-direction: column; margin-top: -30px; margin-left: 20px;">
-                  <li><span>PROF. MAHENDRA UMARE: +91 9823423666</span></li>
-                  <li><span>DR. VALSSON VARGHESE: +91 9850346295</span></li>
-                  <li><span>DR. SWAPNEEL R. SATONE: +91 9823719908</span></li>
-                  <li><span>K.D.K College of Engineering: +91 7122711400</span></li>
-              </div> 
-              </div>
-          </ul>
-      </div>
-      
-      
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <ul>
-            <li>
-              <i class="lni-envelope"></i>
-            </li>
-            <li><span>ic-cisd2024@kdkce.edu.in</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  
   
   <!-- Contact text End -->
 
@@ -3378,23 +3203,13 @@
           <div class="subscribe-inner wow fadeInDown" data-wow-delay="0.3s">
             <!-- <h2 class="subscribe-title">To Get Nearly Updates</h2> -->
             <form class="text-center form-inline">
-              <!-- <input class="mb-20 form-control" name="email" placeholder="Enter Your Email Here">
-              <button type="submit" class="btn btn-common sub-btn" data-style="zoom-in" data-spinner-size="30"
-                name="submit" id="submit">
-                <span class="ladda-label"><i class="lni-check-box"></i> Subscribe</span>
-              </button> -->
+             
             </form>
           </div>
           <div class="footer-logo">
             <img src="assets/img/kdklogo2.png" alt="">
           </div>
-          <!-- <div class="social-icons-footer">
-            <ul>
-              <li class="facebook"><a target="_blank" href="3"><i class="lni-facebook-filled"></i></a></li>
-              <li class="twitter"><a target="_blank" href="3"><i class="lni-twitter-filled"></i></a></li>
-              <li class="pinterest"><a target="_blank" href="3"><i class="lni-pinterest"></i></a></li>
-            </ul>
-          </div> -->
+         
           <div class="site-info">
             <p>Designed and Developed by <a href="https://www.kdkce.edu.in/" rel="nofollow">KDKCE</a></p>
           </div>
